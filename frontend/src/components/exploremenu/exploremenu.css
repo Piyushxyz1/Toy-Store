@@ -1,0 +1,58 @@
+.explore-menu h2{
+font-size: max(3.5vw,20px);
+font-weight: 600;
+margin: 10px 0;
+display: flex;
+flex-direction: column;
+
+}
+
+.explore-menu-text{
+margin: 10px 0;
+font-weight: 300;
+font-size: max(1vw,15px);
+
+}
+
+.explore-menu-list{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 20px 0;
+    overflow-x: scroll;
+}
+
+.explore-menu-list::-webkit-scrollbar{
+    display: none;
+}
+
+.explore-menu-item-list img{
+width: 7.5vw;
+min-width: 80px;
+cursor:pointer;
+border-radius: 50%;
+transition: 0.1s ease-in-out;
+
+}
+
+.explore-menu-item-list p{
+
+    font-size: max(1vw,15px);
+}
+
+.explore-menu hr{
+
+margin: 10px 0;
+height:2px;
+background-color: #e2e2e2;
+border: none;
+
+}
+
+
+.explore-menu-item-list .active {
+
+padding: 8px;
+border: 2px solid tomato;
+
+}
