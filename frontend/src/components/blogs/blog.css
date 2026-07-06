@@ -1,0 +1,130 @@
+.blog {
+  padding: 80px 60px;
+  background: white;
+}
+
+.blog-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.blog-badge {
+  display: inline-block;
+  background: #FF6B6B;
+  color: white;
+  padding: 6px 20px;
+  border-radius: 50px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.blog-header h2 {
+  font-size: 40px;
+  color: #1a1a2e;
+  margin: 15px 0 10px;
+}
+
+.blog-header p {
+  font-size: 18px;
+  color: #666;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blog-card {
+  background: #f8f9fa;
+  border-radius: 16px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.blog-emoji {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.blog-content h3 {
+  font-size: 18px;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.blog-content p {
+  font-size: 14px;
+  color: #888;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.blog-meta {
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 15px;
+}
+
+.blog-btn {
+  background: none;
+  border: none;
+  color: #FF6B6B;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.blog-btn:hover {
+  transform: translateX(5px);
+}
+
+.blog-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.blog-view-all {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.blog-view-all:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 900px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+  .blog {
+    padding: 60px 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .blog {
+    padding: 40px 20px;
+  }
+}

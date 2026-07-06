@@ -24,13 +24,23 @@ const Navbar = ({ setShowLogin, showLogin }) => {
 
   return (
     <div className='navbar'>
-      <Link to={'/'}>
-        <img src={assets.logo} alt='' className='logo' />
-      </Link>
+      <Link to={'/'} className="logo-link">
+  <div className="toy-logo-css">
+    <div className="toy-block">
+      <div className="dot"></div>
+      <div className="dot"></div>
+      <div className="dot"></div>
+      <div className="dot"></div>
+      <div className="dot"></div>
+      <div className="dot"></div>
+    </div>
+    <span className="brand-name">ToyStore</span>
+  </div>
+</Link>
       <div className='navbar-menu'>
         <Link to="/" className={menu === "home" ? "active" : ""} onClick={() => setMenu("home")} >Home</Link>
         <a href="#explore-menu" className={menu === "menu" ? "active" : ""} onClick={() => setMenu("menu")} > Menu</a>
-        <a href="#app-download" className={menu === "mobile" ? "active" : ""} onClick={() => setMenu("mobile")} >Mobile-App</a>
+        <a href="#blog" className={menu === "blog" ? "active" : ""} onClick={() => setMenu("blog")} >Blogs</a>
         <a href="#footer" className={menu === "contact" ? "active" : ""} onClick={() => setMenu("contact")}>Contact-Us</a>
       </div>
       <div className="navbar-right">

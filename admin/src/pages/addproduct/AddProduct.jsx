@@ -11,7 +11,7 @@ const AddProduct = ({url}) => {
     const [data,setData] = useState({
         Name: "",
         Description: "",
-        Category: "Salad",
+        Category: "Sports",
         Price: ""
     });
 
@@ -44,7 +44,7 @@ e.preventDefault();
     setData({
         Name: "",
         Description: "",
-        Category: "Salad",
+        Category: "Sports",
         Price: ""
     })
 
@@ -88,10 +88,8 @@ e.preventDefault();
 
                         <p>Product Category</p>
                         <select name="Category" onChange={handleChange} >
-                            <option value="Salad">Salad</option>
-                            <option value="Rolls">Rolls</option>
-                            <option value="Deserts">Deserts</option>
-                            <option value="Sandwich">Sandwich</option>
+                           <option value="Sports">Sports</option>
+                            <option value="Educational">Educational</option>
                             <option value="Remote Control Cars">Remote Control Cars</option>
                             <option value="Plush Toys">Plush Toys</option>
                             <option value="Legos">legos</option>

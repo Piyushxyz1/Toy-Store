@@ -1,10 +1,10 @@
 import React from 'react';
-import './fooddisplay.css'
+import './toydisplay.css'
 import { useContext } from 'react';
 import { StoreContext } from '../../context/StoreContext';
 import FoodItems from '../fooditems/FoodItems';
 
-const FoodDisplay = ({category}) => {
+const ToyDisplay = ({category}) => {
 
     const {list} =  useContext(StoreContext);
   
@@ -30,4 +30,4 @@ const FoodDisplay = ({category}) => {
   )
 }
 
-export default FoodDisplay
+export default ToyDisplay

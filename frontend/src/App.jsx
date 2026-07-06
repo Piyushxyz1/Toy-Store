@@ -9,6 +9,8 @@ import Login from './components/login/Login'
 import { ToastContainer } from 'react-toastify'
 import Verify from './pages/verify/Verify'
 import MyOrders from './pages/myorders/MyOrders'
+import BlogDetail from './pages/blogdetail/BlogDetail'
+import ScrollToTop from './components/scroll-top/ScrollToTop'
 
 const App = () => {
 
@@ -17,13 +19,14 @@ const App = () => {
   return (
     <>
       {showLogin ? <Login showLogin={showLogin} setShowLogin={setShowLogin} /> : ""}
-
+       <ScrollToTop />
       <div className='app'>
-        <div style={{ width: "80%", margin: "auto" }}>
-        <ToastContainer position="top-center" style={{ zIndex: 3 }} autoClose={2000} />
+        <ToastContainer position="top-center" style={{zIndex: 4 }} autoClose={2000} />
           <Navbar showLogin={showLogin} setShowLogin={setShowLogin} />
+        <div style={{ width: "80%", margin: "auto" }}>
           <Routes>
             <Route path='/' element={<Home />} />
+              <Route path="/blog/:id" element={<BlogDetail />} />
             <Route path='/orders' element={<Order />} />
             <Route path='/cart' element={<Cart />} />
             <Route path= "/verify" element = {<Verify/>} />

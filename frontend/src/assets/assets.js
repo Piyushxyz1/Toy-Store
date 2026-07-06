@@ -2,12 +2,12 @@ import basket_icon from './basket_icon.png'
 import logo from './logo.png'
 import header_img from './header_img.png'
 import search_icon from './search_icon.png'
-import menu_1 from './menu_1.png'
-import menu_2 from './menu_2.png'
-import menu_3 from './menu_3.png'
-import menu_4 from './menu_4.png'
-import menu_5 from './menu_5.png'
-import menu_6 from './menu_6.png'
+import plush from './plush.webp'
+import actionfigure from "./action-figure-t.webp"
+import lego from './lego.jpg'
+import remotecontrolcar from './remote-control-cars.jpg'
+import educational from './educational.jpg'
+import sports from  './basketball-menu.jpg'
 import menu_7 from './menu_7.png'
 import menu_8 from './menu_8.png'
 
@@ -86,36 +86,29 @@ export const assets = {
 export const menu_list = [
     {
         menu_name: "Plush Toys",
-        menu_image: menu_1
+        menu_image: plush
     },
     {
         menu_name: "Action Figures",
-        menu_image: menu_2
+        menu_image: actionfigure
     },
     {
         menu_name: "Legos",
-        menu_image: menu_3
+        menu_image: lego
     },
     {
-        menu_name: "Sandwich",
-        menu_image: menu_4
+        menu_name: "Remote Control Cars",
+        menu_image: remotecontrolcar
     },
     {
-        menu_name: "Cake",
-        menu_image: menu_5
+        menu_name: "Educational",
+        menu_image: educational
     },
     {
-        menu_name: "Pure Veg",
-        menu_image: menu_6
+        menu_name: "Sports",
+        menu_image: sports
     },
-    {
-        menu_name: "Pasta",
-        menu_image: menu_7
-    },
-    {
-        menu_name: "Noodles",
-        menu_image: menu_8
-    }]
+   ]
 
 export const food_list = [
     {
