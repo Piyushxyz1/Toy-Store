@@ -87,7 +87,7 @@ listOrder()
         <p>{order.Items.length}</p>
         <p>{order.Amount}</p>
         <select onChange={(event)=>statusHandler(event,order._id)} value={order.Status}>
-          <option value="Food processing">Food Processing</option>
+          <option value="Order processing">Order Processing</option>
           <option value="Out for delivery">Out for Delivery</option>
           <option value="Delivered">Delivered</option>
         </select>

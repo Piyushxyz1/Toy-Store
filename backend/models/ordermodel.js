@@ -23,7 +23,7 @@ Address: {
 
 Status: {
     type:String,
-    default: "Food processing"
+    default: "Order processing"
 
 },
 
