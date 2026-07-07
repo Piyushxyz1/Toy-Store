@@ -64,7 +64,7 @@ useEffect(()=>{
     const addToCart = async(itemId)=>{
 
       if(!token){
-        toast.error("You must be logged in to continue")
+        toast.error("Please Create and account or login to add products in the cart")
         return
       }
      
@@ -85,7 +85,7 @@ useEffect(()=>{
 
     const removeFromCart= async(itemId)=>{
       if(!token){
-        toast.error("You must be logged in to continue")
+        toast.error("Please Create and account or login to continue")
 
         return
       }

@@ -132,7 +132,7 @@ export const orderstatus = async(req,res)=>{
         const updatestatus = await orderModel.findByIdAndUpdate(orderId,{Status:status})
         console.log(updatestatus)
 
-        res.json({success:true,data:updatestatus})
+        res.json({success:true,status:updatestatus})
     
    } catch (error) {
   
