@@ -41,17 +41,12 @@ A full-stack toy e-commerce application built with the MERN stack. The applicati
 
 ### Clone the repository
 
-```bash
-git clone https://github.com/your-username/toy-store.git
-cd toy-store
-```
-
 ### Install dependencies
 
 Frontend
 
 ```bash
-cd client
+cd frontend
 npm install
 ```
 

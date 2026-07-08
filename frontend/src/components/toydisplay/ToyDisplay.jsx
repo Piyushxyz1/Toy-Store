@@ -11,7 +11,6 @@ const ToyDisplay = ({category}) => {
 
   return (
     <div className='food-display' id ='food-display'>
-     <h2>Top toys near you</h2>
     <div className="food-display-list">
     {list.map((item,index)=>{
       if(category === "all" || item.Category === category){

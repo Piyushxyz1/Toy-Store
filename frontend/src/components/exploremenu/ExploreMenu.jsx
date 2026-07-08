@@ -1,30 +1,44 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import "./exploremenu.css";
 import { menu_list } from '../../assets/assets';
 
-const ExploreMenu = ({category,setCategory}) => {
- 
+const ExploreMenu = ({ category, setCategory }) => {
   return (
-    
     <div className='explore-menu' id="explore-menu">
-     <h2>Explore Our Menu</h2>
-        <p className='explore-menu-text'>Choose from our range of toys and keep your child engaged</p>
-        <div className="explore-menu-list">
-       
-         {menu_list.map((items,index)=>{
-        return(
+      <div className="explore-menu-header">
+        <span className="explore-menu-badge">Our Collection</span>
+        <h2>Explore Our <span className="highlight">Premium</span> Menu</h2>
+        <p className='explore-menu-text'>
+          Discover handpicked toys designed to spark creativity and joy in every child
+        </p>
+      </div>
 
-            <div className='explore-menu-item-list' key={index} onClick={(prev)=>setCategory(prev === items.menu_name? "all":items.menu_name)}>
-            <img src = {items.menu_image} alt = "menu-image" className={category === items.menu_name? "active": ""}/>
-            <p >{items.menu_name}</p>       
+      <div className="explore-menu-list">
+        {menu_list.map((items, index) => {
+          const isActive = category === items.menu_name;
+          return (
+            <div
+              className={`explore-menu-item ${isActive ? 'active' : ''}`}
+              key={index}
+              onClick={() => setCategory(isActive ? "all" : items.menu_name)}
+            >
+              <div className="menu-item-image-wrapper">
+                <img
+                  src={items.menu_image}
+                  alt={items.menu_name}
+                  className="menu-item-image"
+                />
+                {isActive && <div className="active-indicator"></div>}
+              </div>
+              <p className="menu-item-name">{items.menu_name}</p>
+              {isActive && <div className="menu-item-underline"></div>}
             </div>
-        )
-         })}
+          );
+        })}
+      </div>
 
-        </div>
-        <hr/>
     </div>
-  )
-}
+  );
+};
 
-export default ExploreMenu
+export default ExploreMenu;
