@@ -276,7 +276,7 @@ const MyOrders = () => {
                             <div className="delivery-info-card">
                                 <div className="card-label">Order ID</div>
                                 <div className="card-value" style={{ fontSize: '13px', wordBreak: 'break-all' }}>
-                                    #{selectedOrder._id.slice(-8)}
+                                    {selectedOrder._id}
                                 </div>
                             </div>
                             <div className="delivery-info-card">
