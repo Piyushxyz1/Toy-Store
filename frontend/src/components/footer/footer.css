@@ -30,6 +30,7 @@
   font-size: 22px;
   font-weight: 700;
   background: #FF6B6B;
+;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -100,6 +101,7 @@
   width: 100%;
   height: 2px;
   background: #FF6B6B;
+;
   border-radius: 4px;
   transition: width 0.3s ease;
 }

@@ -57,7 +57,8 @@
 }
 
 .navbar .active {
-  background: #FF6B6B!important;
+  background: #FF6B6B;
+!important;
   color: #ffffff !important;
   box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
   transform: translateY(-1px);
@@ -142,6 +143,7 @@
 /* ===== BUTTON ===== */
 .navbar-right button {
   background: #FF6B6B;
+;
   font-size: 14px;
   font-weight: 600;
   color: #ffffff;
@@ -485,6 +487,7 @@ html {
   color: #2d3436;
   letter-spacing: -0.5px;
   background: #FF6B6B;
+;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

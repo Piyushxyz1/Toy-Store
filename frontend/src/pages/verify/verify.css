@@ -56,6 +56,7 @@
 
 .success-card button:hover {
     background: #FF6B6B;
+;
     transform: scale(1.05);
 }
 

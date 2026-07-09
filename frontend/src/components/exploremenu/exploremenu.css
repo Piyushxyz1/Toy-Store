@@ -16,7 +16,7 @@
 
 .explore-menu-badge {
   display: inline-block;
-  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+  background: linear-gradient(135deg, #FF6B6B, #ff8e8e);
   color: white;
   padding: 6px 20px;
   border-radius: 50px;
@@ -40,7 +40,8 @@
 }
 
 .explore-menu h2 .highlight {
-  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  background: #FF6B6B;
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -81,7 +82,7 @@
 }
 
 .explore-menu-list::-webkit-scrollbar-thumb {
-  background: linear-gradient(90deg, #ff6b6b, #ee5a24);
+  background: linear-gradient(90deg, #FF6B6B, #ee5a24);
   border-radius: 10px;
 }
 
@@ -114,7 +115,8 @@
   height: clamp(70px, 7.5vw, 120px);
   border-radius: 50%;
   padding: 3px;
-  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  background: #FF6B6B;
+
   transition: all 0.3s ease;
   box-shadow: 0 10px 30px rgba(255, 107, 107, 0.15);
 }
@@ -148,7 +150,8 @@
   right: -3px;
   width: 24px;
   height: 24px;
-  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  background: #FF6B6B;
+
   border-radius: 50%;
   border: 3px solid white;
   animation: bounceIn 0.5s ease;
@@ -177,14 +180,14 @@
 }
 
 .explore-menu-item.active .menu-item-name {
-  color: #ff6b6b;
+  color: #FF6B6B;
 }
 
 /* Underline for Active Item */
 .menu-item-underline {
   width: 30px;
   height: 3px;
-  background: linear-gradient(90deg, #ff6b6b, #ee5a24);
+  background: linear-gradient(90deg, #FF6B6B, #ee5a24);
   border-radius: 2px;
   margin-top: 8px;
   animation: slideIn 0.4s ease;
@@ -208,7 +211,7 @@
 }
 
 .divider-icon {
-  color: #ff6b6b;
+  color: #FF6B6B;
   font-size: 20px;
   animation: spin 20s linear infinite;
 }
