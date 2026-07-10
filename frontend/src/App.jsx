@@ -12,7 +12,7 @@ import MyOrders from './pages/myorders/MyOrders'
 import BlogDetail from './pages/blogdetail/BlogDetail'
 import ScrollToTop from './components/scroll-top/ScrollToTop'
 import ToyMenu from './pages/toymenu/ToyMenu'
-import Blogs from './pages/blogs/Blogs'
+
 
 const App = () => {
 
@@ -30,7 +30,6 @@ const App = () => {
             <Route path='/' element={<Home />} />
             <Route path="/blogs/:id" element={<BlogDetail />} />
             <Route path= '/menu' element= {<ToyMenu/>}/> 
-            <Route path= '/blogs' element= {<Blogs/>}/> 
             <Route path='/orders' element={<Order />} />
             <Route path='/cart' element={<Cart />} />
             <Route path= "/verify" element = {<Verify/>} />

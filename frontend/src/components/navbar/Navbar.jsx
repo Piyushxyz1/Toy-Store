@@ -40,7 +40,7 @@ const Navbar = ({ setShowLogin, showLogin }) => {
       <div className='navbar-menu'>
         <Link to="/" className={menu === "home" ? "active" : ""} onClick={() => setMenu("home")} >Home</Link>
         <Link to="/menu" className={menu === "menu" ? "active" : ""} onClick={() => (setMenu("menu"))}>Menu</Link>
-        <Link to="/blogs" className={menu === "blog" ? "active" : ""} onClick={() => setMenu("blog")} >Blogs</Link>
+        <a href="#blog" className={menu === "blog" ? "active" : ""} onClick={() => setMenu("blog")} >Blogs</a>
         <a href="#footer" className={menu === "contact" ? "active" : ""} onClick={() => setMenu("contact")}>Contact-Us</a>
       </div>
       <div className="navbar-right">

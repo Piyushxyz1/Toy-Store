@@ -38,10 +38,6 @@ const Blog = () => {
           </div>
         ))}
       </div>
-
-      <div className="blog-cta">
-        <Link to="/blogs" className="blog-view-all">View All Articles →</Link>
-      </div>
     </div>
   );
 };
