@@ -213,7 +213,6 @@ const MyOrders = () => {
                 ) : (
                     data.map((order, index) => (
                         <div key={index} className="myorder-order">
-                            <img src={assets.parcel_icon} alt="Order" />
 
                             <p>
                                 {order.Items.map((item, index) => (

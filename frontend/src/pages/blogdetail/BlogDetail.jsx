@@ -1,7 +1,7 @@
 // src/components/BlogDetail.jsx
 import React from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
-import "./Blogdetail.css";
+import "./blogdetail.css";
 import { posts } from '../../components/blog/blogassets/blogassets';
 
 const BlogDetail = () => {

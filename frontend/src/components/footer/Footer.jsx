@@ -34,7 +34,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className='footer-content-right'>
-                    <h2>📬 Get In Touch</h2>
+                    <h2>Get In Touch</h2>
                     <ul>
                         <li> +1 (800) 123-4567</li>
                         <li> hello@toystore.com</li>
@@ -45,7 +45,7 @@ const Footer = () => {
             </div>
             <hr/>
             <p className="footer-copyright">
-                 Copyright 2024 © ToyStore.com - Where Dreams Come to Play 🎈
+                 Copyright 2024 © ToyStore.com - Where Dreams Come to Play 
             </p>
         </div>
     )

@@ -83,7 +83,7 @@ const orderData = {
   return (
     <form  className="place-order" onSubmit={placeOrder}>
       <div className='place-order-left'>
-        <h2 className='title-delivery'>Delivery Information</h2>
+        <h2 className='title-delivery'>Delivery Details</h2>
         <div className="multi-fields">
           <input type="text" placeholder='first name' name='Firstname' value={data.Firstname} onChange={onChangeHandler} required/>
           <input type="text" placeholder='last name' name='Lastname' value={data.Lastname} onChange={onChangeHandler}  required />

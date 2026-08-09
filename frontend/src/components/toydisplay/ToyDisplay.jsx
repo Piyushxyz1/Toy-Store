@@ -36,7 +36,6 @@ const ToyDisplay = ({ category }) => {
   return (
     <div className='food-display' id='food-display'>
       <div className="food-display-header">
-        <h2>Our Collection</h2>
         {filteredItems.length > itemsPerPage && (
           <button className="view-all-btn" onClick={handleViewAll}>
             View All ({filteredItems.length})

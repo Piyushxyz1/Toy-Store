@@ -10,7 +10,9 @@ export const StoreContext = createContext(null);
 const StoreContextProvider = ({children})=>{
 
     const [cartItems,setCartItems] = useState({});
-    const url = "http://localhost:5000";
+    
+    const url = import.meta.env.VITE_API_URL || "http://localhost:5000"
+    console.log("API URL =", import.meta.env.VITE_API_URL);
     const  [token,setToken] =  useState('');
     const [list,setList] = useState([]);
   

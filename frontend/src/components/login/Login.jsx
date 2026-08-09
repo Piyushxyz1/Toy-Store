@@ -76,14 +76,27 @@ const Login = ({ setShowLogin }) => {
     <div className="login-popup">
       <form className="login-popup-container" onSubmit={onLogin}>
         <div className="login-popup-title">
-          <h2>{currState}</h2>
-
+          <h2>
+            {currState === "Login" 
+              ? "Welcome Back!" 
+              : "Join the Fun!"}
+          </h2>
           <img
             src={assets.cross_icon}
             alt="Close"
             onClick={() => setShowLogin(false)}
           />
         </div>
+
+        {currState === "Login" ? (
+          <p className="login-subtitle">
+            Ready to play? Sign in and continue your adventure!
+          </p>
+        ) : (
+          <p className="login-subtitle">
+            Create your account and start exploring amazing toys and games!
+          </p>
+        )}
 
         <div className="login-popup-inputs">
           {currState === "SignUp" && (
@@ -99,7 +112,7 @@ const Login = ({ setShowLogin }) => {
 
           <input
             type="email"
-            placeholder="Your Email"
+            placeholder="Email Address"
             name="Email"
             value={data.Email}
             onChange={onChangeHandler}
@@ -108,7 +121,7 @@ const Login = ({ setShowLogin }) => {
 
           <input
             type="password"
-            placeholder="Your Password"
+            placeholder="Password"
             name="Password"
             value={data.Password}
             onChange={onChangeHandler}
@@ -127,19 +140,21 @@ const Login = ({ setShowLogin }) => {
         <div className="login-popup-condition">
           <input type="checkbox" required />
           <p>
-            By continuing, I agree to the Terms of Use and Privacy Policy.
+            I agree to the{" "}
+            <span className="link-text">Terms of Use</span> and{" "}
+            <span className="link-text">Privacy Policy</span>
           </p>
         </div>
 
         {currState === "Login" ? (
-          <p>
-            Create a new account?{" "}
-            <span onClick={() => setCurrState("SignUp")}>Click here</span>
+          <p className="switch-text">
+            New here?{" "}
+            <span onClick={() => setCurrState("SignUp")}>Sign up now</span>
           </p>
         ) : (
-          <p>
-            Already have an account?{" "}
-            <span onClick={() => setCurrState("Login")}>Login</span>
+          <p className="switch-text">
+            Already a member?{" "}
+            <span onClick={() => setCurrState("Login")}>Sign in</span>
           </p>
         )}
       </form>

@@ -11,7 +11,7 @@ configDotenv()
 export const placeOrder = async(req,res)=>{
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
-    const frontend_url = "http://localhost:5173"
+  const frontend_url = process.env.FRONTEND_URL;
 
 try {
     const neworder = new orderModel({
@@ -42,7 +42,7 @@ try {
         product_data :{
             name: "Delivery Charges"
         },
-        unit_amount: 2 * 100 * 80
+        unit_amount: 2 * 100 * 96
     },
     quantity: 1
  })

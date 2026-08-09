@@ -41,10 +41,9 @@ const Navbar = ({ setShowLogin, showLogin }) => {
         <Link to="/" className={menu === "home" ? "active" : ""} onClick={() => setMenu("home")} >Home</Link>
         <Link to="/menu" className={menu === "menu" ? "active" : ""} onClick={() => (setMenu("menu"))}>Menu</Link>
         <a href="#blog" className={menu === "blog" ? "active" : ""} onClick={() => setMenu("blog")} >Blogs</a>
-        <a href="#footer" className={menu === "contact" ? "active" : ""} onClick={() => setMenu("contact")}>Contact-Us</a>
+        <a href="#footer" className={menu === "contact" ? "active" : ""} onClick={() => setMenu("contact")}>Contact</a>
       </div>
       <div className="navbar-right">
-        <img src={assets.search_icon} alt="" />
         <div className="navbar-cart-icon">
           <Link to="/cart">
             <img src={assets.basket_icon} alt="" />

@@ -3,7 +3,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { StoreContext } from '../../context/StoreContext';
 import FoodItems from '../../components/fooditems/FoodItems';
-import './ToyMenu.css';
+import './Toymenu.css';
 
 const ToyMenu = () => {
   const { list } = useContext(StoreContext);
