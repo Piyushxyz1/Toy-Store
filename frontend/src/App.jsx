@@ -25,7 +25,7 @@ const App = () => {
       {showLogin ? <Login showLogin={showLogin} setShowLogin={setShowLogin} /> : ""}
        <ScrollToTop />
       <div className='app'>
-        <ToastContainer position="top-center" style={{zIndex: 4 }} autoClose={2000} />
+        <ToastContainer position="top-center" style={{zIndex: 4,marginTop: "10px" }} autoClose={2000} />
           <Navbar showLogin={showLogin} setShowLogin={setShowLogin} />
         <div style={{ width: "80%", margin: "auto" }}>
           <Routes>
