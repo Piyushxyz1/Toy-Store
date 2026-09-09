@@ -12,6 +12,8 @@ import MyOrders from './pages/myorders/MyOrders'
 import BlogDetail from './pages/blogdetail/BlogDetail'
 import ScrollToTop from './components/scroll-top/ScrollToTop'
 import ToyMenu from './pages/toymenu/ToyMenu'
+import Blogs from './pages/blogdetail/blogpage/Blogs'
+import Contact from './pages/contact/contact'
 
 
 const App = () => {
@@ -28,12 +30,14 @@ const App = () => {
         <div style={{ width: "80%", margin: "auto" }}>
           <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/blogs' element = {<Blogs/>}/>
             <Route path="/blogs/:id" element={<BlogDetail />} />
             <Route path= '/menu' element= {<ToyMenu/>}/> 
             <Route path='/orders' element={<Order />} />
             <Route path='/cart' element={<Cart />} />
             <Route path= "/verify" element = {<Verify/>} />
             <Route path= "/myorders" element = {<MyOrders/>} />
+            <Route path="/contact" element={<Contact />} />
 
           </Routes>
         </div>

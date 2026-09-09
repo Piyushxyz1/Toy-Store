@@ -3,7 +3,7 @@ import  jwt from  "jsonwebtoken";
 
 export const authMiddleware = (req,res,next)=>{
 
-const {token} = req.headers;
+const {token} = req.headers; // when token is created it is stoed in req.headers only
 
 
 
