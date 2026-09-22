@@ -10,7 +10,7 @@ import {
   Gift,
   Heart,
 } from "lucide-react";
-import "./Welcome.css";
+import "./welcome.css";
 
 const Welcome = ({ setShowLogin }) => {
   const openLogin = () => {
