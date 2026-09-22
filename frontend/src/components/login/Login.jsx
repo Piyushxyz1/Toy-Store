@@ -5,10 +5,12 @@ import { StoreContext } from "../../context/StoreContext";
 import axios from "axios";
 import { toast } from "react-toastify";
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = ({ setShowLogin }) => {
   const [currState, setCurrState] = useState("Login");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const [data, setData] = useState({
     Name: "",
@@ -61,6 +63,7 @@ const Login = ({ setShowLogin }) => {
         });
 
         setShowLogin(false);
+        navigate("/");
       } else {
         toast.error(response.data.message);
       }
@@ -70,6 +73,7 @@ const Login = ({ setShowLogin }) => {
       );
     } finally {
       setLoading(false);
+      
     }
   };
 

@@ -89,16 +89,6 @@ const App = () => {
                 )
               }
             />
-            <Route
-              path="/"
-              element={
-                !token ? (
-                  <Welcome />
-                ) : (
-                  <Navigate to="/" />
-                )
-              }
-            />
 
 
             {/* ================= EXISTING ROUTES ================= */}
