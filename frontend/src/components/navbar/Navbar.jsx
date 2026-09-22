@@ -71,7 +71,7 @@ const Navbar = ({ setShowLogin, showLogin }) => {
           </div>
 
           <span className="brand-name">
-            ToyStore
+            ToyVerse
           </span>
 
         </div>
