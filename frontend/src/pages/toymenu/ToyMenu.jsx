@@ -103,7 +103,7 @@ const ToyMenu = () => {
           ))
         ) : (
           <div className="no-items">
-            <p>No items found in this category.</p>
+            <p>Please Login to view menu items.</p>
           </div>
         )}
       </div>

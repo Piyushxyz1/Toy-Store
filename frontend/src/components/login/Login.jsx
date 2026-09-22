@@ -1,9 +1,10 @@
-import React, { useState, useContext } from "react";
+import  { useState, useContext } from "react";
 import { assets } from "../../assets/assets";
 import "./login.css";
 import { StoreContext } from "../../context/StoreContext";
 import axios from "axios";
 import { toast } from "react-toastify";
+import React, { useEffect } from "react";
 
 const Login = ({ setShowLogin }) => {
   const [currState, setCurrState] = useState("Login");
@@ -72,13 +73,23 @@ const Login = ({ setShowLogin }) => {
     }
   };
 
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
+
+
   return (
     <div className="login-popup">
       <form className="login-popup-container" onSubmit={onLogin}>
         <div className="login-popup-title">
           <h2>
             {currState === "Login" 
-              ? "Welcome Back!" 
+              ? "Sign in to continue!" 
               : "Join the Fun!"}
           </h2>
           <img
