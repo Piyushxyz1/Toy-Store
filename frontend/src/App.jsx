@@ -48,7 +48,7 @@ const App = () => {
 
         <ToastContainer
           position="top-center"
-          style={{ zIndex: 4 }}
+          style={{ zIndex: 999 }}
           autoClose={2000}
         />
 
