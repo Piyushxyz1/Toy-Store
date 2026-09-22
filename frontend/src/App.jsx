@@ -48,7 +48,7 @@ const App = () => {
 
         <ToastContainer
           position="top-center"
-          style={{ zIndex: 999 }}
+          style={{ zIndex: 10000  }}
           autoClose={2000}
         />
 
@@ -86,6 +86,16 @@ const App = () => {
                   <Home />
                 ) : (
                   <Navigate to="/welcome" replace />
+                )
+              }
+            />
+            <Route
+              path="/"
+              element={
+                !token ? (
+                  <Welcome />
+                ) : (
+                  <Navigate to="/" />
                 )
               }
             />
