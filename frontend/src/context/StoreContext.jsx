@@ -70,8 +70,10 @@ const StoreContextProvider = ({ children }) => {
 
     if (!cartItems[itemId]) {
       setCartItems((prev) => ({ ...prev, [itemId]: 1 }));
+      toast.success("item added to cart")
     } else {
       setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
+      toast.success("item added to cart")
     }
 
     if (token) {
@@ -96,6 +98,7 @@ const StoreContextProvider = ({ children }) => {
         { itemId },
         { headers: { token } },
       );
+      toast.success("item removed from cart")
     }
   };
 
