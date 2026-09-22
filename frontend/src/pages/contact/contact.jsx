@@ -9,6 +9,8 @@ const Contact = () => {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -16,19 +18,46 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("Contact form:", formData);
+    try {
+      setLoading(true);
 
-    alert("Thanks for reaching out! We'll get back to you soon.");
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/contact`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Unable to send message");
+      }
+
+      alert(data.message);
+
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Contact Form Error:", error);
+
+      alert(
+        error.message || "Something went wrong. Please try again."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -240,8 +269,12 @@ const Contact = () => {
               <button
                 type="submit"
                 className="contact-submit"
+                disabled={loading}
               >
-                <span>Send Message</span>
+                <span>
+                  {loading ? "Sending..." : "Send Message"}
+                </span>
+
                 <span className="submit-arrow">
                   ↗
                 </span>

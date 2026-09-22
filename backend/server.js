@@ -7,6 +7,7 @@ import userRoutes from "./routes/userRoutes.js";
 import cookieParser from 'cookie-parser'
 import cartRoutes from "./routes/cartRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
+import contactRouter from "./routes/contactRoutes.js";
 
 configDotenv()
 
@@ -30,6 +31,8 @@ app.use('/images',express.static("uploads"));
 app.use('/api/users',userRoutes)
 app.use('/api/cart',cartRoutes)
 app.use("/api/orders",orderRoutes)
+app.use("/api/contact", contactRouter);
+
 app.listen(PORT,()=>{
 connectDB()
 console.log(`server is running on ${PORT}`)
