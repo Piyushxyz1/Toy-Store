@@ -9,10 +9,23 @@ import { toast } from "react-toastify";
 const Navbar = ({ setShowLogin, showLogin }) => {
   const [menu, setMenu] = useState("home");
 
-  const { totalAmount, token, setToken } =
-    useContext(StoreContext);
+  const {
+    totalAmount,
+    token,
+    setToken,
+    cartItems,
+  } = useContext(StoreContext);
 
   const navigate = useNavigate();
+
+  /* =========================================================
+     CART COUNT
+  ========================================================= */
+
+  const cartCount = Object.values(cartItems).reduce(
+    (total, quantity) => total + quantity,
+    0
+  );
 
   /* =========================================================
      LOGOUT
@@ -31,7 +44,6 @@ const Navbar = ({ setShowLogin, showLogin }) => {
   /* =========================================================
      NAVIGATION
   ========================================================= */
-
 
   const handleContactClick = () => {
     setMenu("contact");
@@ -100,20 +112,22 @@ const Navbar = ({ setShowLogin, showLogin }) => {
           Menu
         </Link>
 
-        <Link to = "/blogs"
+        <Link
+          to="/blogs"
           className={`nav-link-button ${
             menu === "blog" ? "active" : ""
           }`}
-           onClick={() => setMenu("blog")}
+          onClick={() => setMenu("blog")}
         >
           Blogs
         </Link>
 
-        <Link to = '/contact'
+        <Link
+          to="/contact"
           className={`nav-link-button ${
             menu === "contact" ? "active" : ""
           }`}
-           onClick={() => setMenu("contact")}
+          onClick={() => setMenu("contact")}
         >
           Contact
         </Link>
@@ -127,7 +141,9 @@ const Navbar = ({ setShowLogin, showLogin }) => {
 
       <div className="navbar-right">
 
-        {/* CART */}
+        {/* =================================================
+            CART
+        ================================================= */}
 
         <div className="navbar-cart-icon">
 
@@ -138,8 +154,12 @@ const Navbar = ({ setShowLogin, showLogin }) => {
               alt="Cart"
             />
 
-            {totalAmount() > 0 && (
-              <span className="cart-dot"></span>
+            {/* CART COUNT */}
+
+            {cartCount > 0 && (
+              <span className="cart-count">
+                {cartCount}
+              </span>
             )}
 
           </Link>
@@ -181,12 +201,14 @@ const Navbar = ({ setShowLogin, showLogin }) => {
               <li
                 onClick={() => navigate("/myorders")}
               >
+
                 <img
                   src={assets.bag_icon}
                   alt=""
                 />
 
                 <p>Orders</p>
+
               </li>
 
               <hr />
