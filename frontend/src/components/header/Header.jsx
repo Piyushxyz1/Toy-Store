@@ -37,12 +37,7 @@ const Header = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
 
-  const handleShopNow = () => {
-    const menuSection = document.getElementById('menu') || document.querySelector('.menu')
-    if (menuSection) {
-      menuSection.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
+
 
   return (
     <div 
@@ -110,15 +105,7 @@ const Header = () => {
         <p>Discover fun, safe, and lovable toys for every little smile — buy your favorites here.</p>
         
         <div className="header-actions">
-          <button onClick={handleShopNow} className="cta-button">
-            <span className="btn-content">
-              <span>Shop Now</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </span>
-            <span className="btn-shine"></span>
-          </button>
+        
           
           <div className="header-stats">
             <div className="stat-item">
