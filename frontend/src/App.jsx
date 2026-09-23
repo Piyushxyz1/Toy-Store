@@ -1,58 +1,58 @@
-import React, { useState } from "react";
-import Navbar from "./components/navbar/Navbar";
+
+import React, { useState, useContext } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
+
+import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
+import ScrollToTop from "./components/scroll-top/ScrollToTop";
+
 import Home from "./pages/home/Home";
 import Order from "./pages/orders/Order";
 import Cart from "./pages/cart/Cart";
-import Footer from "./components/footer/Footer";
-import Login from "./components/login/Login";
-import { ToastContainer } from "react-toastify";
 import Verify from "./pages/verify/Verify";
 import MyOrders from "./pages/myorders/MyOrders";
+
+import Login from "./components/login/Login";
+
 import BlogDetail from "./pages/blogdetail/BlogDetail";
-import ScrollToTop from "./components/scroll-top/ScrollToTop";
-import ToyMenu from "./pages/toymenu/ToyMenu";
 import Blogs from "./pages/blogdetail/blogpage/Blogs";
+
+import ToyMenu from "./pages/toymenu/ToyMenu";
 import Contact from "./pages/contact/contact";
 import Welcome from "./pages/welcome/Welcome";
 
-import { useContext } from "react";
+import { ToastContainer } from "react-toastify";
+
 import { StoreContext } from "./context/StoreContext";
 import ProtectedRoute from "./routes/ProtectedRoute";
 
-
 const App = () => {
-
   const [showLogin, setShowLogin] = useState(false);
 
   const { token } = useContext(StoreContext);
 
-
   return (
     <>
-
       {/* ================= LOGIN MODAL ================= */}
 
-      {showLogin ? (
+      {showLogin && (
         <Login
           showLogin={showLogin}
           setShowLogin={setShowLogin}
         />
-      ) : (
-        ""
       )}
-
 
       <ScrollToTop />
 
       <div className="app">
 
+        {/* ================= TOAST ================= */}
+
         <ToastContainer
           position="top-center"
-          style={{ zIndex: 10000  }}
+          style={{ zIndex: 10000 }}
           autoClose={2000}
         />
-
 
         {/* ================= NAVBAR ================= */}
 
@@ -61,12 +61,11 @@ const App = () => {
           setShowLogin={setShowLogin}
         />
 
-
         <div style={{ width: "80%", margin: "auto" }}>
 
           <Routes>
 
-            {/* ================= WELCOME ================= */}
+            {/* ================= PUBLIC ROUTES ================= */}
 
             <Route
               path="/welcome"
@@ -75,6 +74,21 @@ const App = () => {
                   setShowLogin={setShowLogin}
                 />
               }
+            />
+
+            <Route
+              path="/blogs"
+              element={<Blogs />}
+            />
+
+            <Route
+              path="/blogs/:id"
+              element={<BlogDetail />}
+            />
+
+            <Route
+              path="/contact"
+              element={<Contact />}
             />
 
 
@@ -92,49 +106,43 @@ const App = () => {
             />
 
 
-            {/* ================= EXISTING ROUTES ================= */}
+            {/* ================= PROTECTED ROUTES ================= */}
+
+            <Route element={<ProtectedRoute />}>
+
+              <Route
+                path="/menu"
+                element={<ToyMenu />}
+              />
+
+              <Route
+                path="/orders"
+                element={<Order />}
+              />
+
+              <Route
+                path="/cart"
+                element={<Cart />}
+              />
+
+              <Route
+                path="/verify"
+                element={<Verify />}
+              />
+
+              <Route
+                path="/myorders"
+                element={<MyOrders />}
+              />
+
+            </Route>
+
+
+            {/* ================= FALLBACK ================= */}
 
             <Route
-              path="/blogs"
-              element={<Blogs />}
-            />
-
-            <Route
-              path="/blogs/:id"
-              element={<BlogDetail />}
-            />
-           
-           <ProtectedRoute>
-
-            <Route
-              path="/menu"
-              element={<ToyMenu />}
-            />
-           </ProtectedRoute>
-
-            <Route
-              path="/orders"
-              element={<Order />}
-            />
-
-            <Route
-              path="/cart"
-              element={<Cart />}
-            />
-
-            <Route
-              path="/verify"
-              element={<Verify />}
-            />
-
-            <Route
-              path="/myorders"
-              element={<MyOrders />}
-            />
-
-            <Route
-              path="/contact"
-              element={<Contact />}
+              path="*"
+              element={<Navigate to="/" replace />}
             />
 
           </Routes>
@@ -144,7 +152,6 @@ const App = () => {
         <Footer />
 
       </div>
-
     </>
   );
 };
