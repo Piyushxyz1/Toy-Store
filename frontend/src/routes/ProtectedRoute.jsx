@@ -1,15 +1,15 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import { useContext } from "react";
 import { StoreContext } from "../context/StoreContext";
 
-const ProtectedRoute = ({ children }) => {
+const ProtectedRoute = () => {
   const { token } = useContext(StoreContext);
 
   if (!token) {
     return <Navigate to="/welcome" replace />;
   }
 
-  return children;
+  return <Outlet />;
 };
 
 export default ProtectedRoute;

@@ -10,13 +10,12 @@ const StoreContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState({});
 
   const url = import.meta.env.VITE_API_URL || "http://localhost:5000";
-  console.log("API URL =", import.meta.env.VITE_API_URL);
   const [token, setToken] = useState(localStorage.getItem("token") || "");
   const [list, setList] = useState([]);
 
   const fetchList = async () => {
     const getlist = await axios.get(url + "/api/toys/lists");
-    console.log(getlist);
+    
     setList(getlist.data);
   };
 
@@ -26,7 +25,7 @@ const StoreContextProvider = ({ children }) => {
       {},
       { headers: { token } },
     );
-    console.log(response.data);
+   
     setCartItems(response.data.getCartDetails);
   };
 

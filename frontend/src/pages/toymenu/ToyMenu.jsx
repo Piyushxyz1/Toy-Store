@@ -1,16 +1,16 @@
 // ToyMenu.js
-import React, { useContext, useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { StoreContext } from '../../context/StoreContext';
-import FoodItems from '../../components/fooditems/FoodItems';
-import './Toymenu.css';
+import React, { useContext, useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { StoreContext } from "../../context/StoreContext";
+import FoodItems from "../../components/fooditems/FoodItems";
+import "./Toymenu.css";
 
 const ToyMenu = () => {
   const { list } = useContext(StoreContext);
   const location = useLocation();
   const navigate = useNavigate();
-  const [category, setCategory] = useState('all');
-  const [sortBy, setSortBy] = useState('default');
+  const [category, setCategory] = useState("all");
+  const [sortBy, setSortBy] = useState("default");
 
   useEffect(() => {
     if (location.state?.category) {
@@ -20,7 +20,7 @@ const ToyMenu = () => {
 
   // Filter and sort items
   const getFilteredItems = () => {
-    let filtered = list.filter(item => {
+    let filtered = list.filter((item) => {
       if (category === "all" || item.Category === category) {
         return item;
       }
@@ -29,13 +29,13 @@ const ToyMenu = () => {
 
     // Sort items
     switch (sortBy) {
-      case 'price-low':
+      case "price-low":
         filtered.sort((a, b) => a.Price - b.Price);
         break;
-      case 'price-high':
+      case "price-high":
         filtered.sort((a, b) => b.Price - a.Price);
         break;
-      case 'name':
+      case "name":
         filtered.sort((a, b) => a.Name.localeCompare(b.Name));
         break;
       default:
@@ -48,7 +48,7 @@ const ToyMenu = () => {
   const filteredItems = getFilteredItems();
 
   // Get unique categories for filter
-  const categories = ['all', ...new Set(list.map(item => item.Category))];
+  const categories = ["all", ...new Set(list.map((item) => item.Category))];
 
   return (
     <div className="menu-page">
@@ -60,8 +60,8 @@ const ToyMenu = () => {
       <div className="menu-controls">
         <div className="filter-section">
           <label>Category: </label>
-          <select 
-            value={category} 
+          <select
+            value={category}
             onChange={(e) => setCategory(e.target.value)}
             className="filter-select"
           >
@@ -75,8 +75,8 @@ const ToyMenu = () => {
 
         <div className="sort-section">
           <label>Sort by: </label>
-          <select 
-            value={sortBy} 
+          <select
+            value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
             className="sort-select"
           >
@@ -87,14 +87,12 @@ const ToyMenu = () => {
           </select>
         </div>
 
-        <button className="back-btn" onClick={() => navigate('/')}>
+        <button className="back-btn" onClick={() => navigate("/")}>
           ← Back to Home
         </button>
       </div>
 
-      <div className="menu-stats">
-        Showing {filteredItems.length} items
-      </div>
+      <div className="menu-stats">Showing {filteredItems.length} items</div>
 
       <div className="menu-grid">
         {filteredItems.length > 0 ? (
@@ -103,7 +101,7 @@ const ToyMenu = () => {
           ))
         ) : (
           <div className="no-items">
-            <p>Please Login to view menu items.</p>
+            <p>Sorry, no items found currently.</p>
           </div>
         )}
       </div>
