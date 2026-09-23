@@ -1,6 +1,7 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useContext } from "react";
 import { StoreContext } from "../context/StoreContext";
+import { toast } from "react-toastify";
 
 const ProtectedRoute = () => {
   const { token } = useContext(StoreContext);
