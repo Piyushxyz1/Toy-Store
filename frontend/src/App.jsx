@@ -18,6 +18,7 @@ import Welcome from "./pages/welcome/Welcome";
 
 import { useContext } from "react";
 import { StoreContext } from "./context/StoreContext";
+import ProtectedRoute from "./routes/ProtectedRoute";
 
 
 const App = () => {
@@ -102,11 +103,14 @@ const App = () => {
               path="/blogs/:id"
               element={<BlogDetail />}
             />
+           
+           <ProtectedRoute>
 
             <Route
               path="/menu"
               element={<ToyMenu />}
             />
+           </ProtectedRoute>
 
             <Route
               path="/orders"
