@@ -18,18 +18,18 @@ const Navbar = ({ setShowLogin, showLogin }) => {
 
   const navigate = useNavigate();
 
-  
+  /* =========================================================
      CART COUNT
-  
+  ========================================================= */
 
   const cartCount = Object.values(cartItems).reduce(
     (total, quantity) => total + quantity,
     0
   );
 
-  
+  /* =========================================================
      LOGOUT
-  
+  ========================================================= */
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -41,9 +41,9 @@ const Navbar = ({ setShowLogin, showLogin }) => {
     toast.success("Logged out successfully");
   };
 
-  
+  /* =========================================================
      NAVIGATION
-  
+  ========================================================= */
 
   const handleContactClick = () => {
     setMenu("contact");
@@ -62,9 +62,9 @@ const Navbar = ({ setShowLogin, showLogin }) => {
   return (
     <nav className="navbar">
 
-   
+      {/* =====================================================
           LOGO
-   
+      ===================================================== */}
 
       <Link
         to="/"
@@ -90,9 +90,9 @@ const Navbar = ({ setShowLogin, showLogin }) => {
       </Link>
 
 
-   
+      {/* =====================================================
           NAVIGATION
-   
+      ===================================================== */}
 
       <div className="navbar-menu">
 
@@ -135,15 +135,15 @@ const Navbar = ({ setShowLogin, showLogin }) => {
       </div>
 
 
-   
+      {/* =====================================================
           RIGHT SIDE
-   
+      ===================================================== */}
 
       <div className="navbar-right">
 
-        {========
+        {/* =================================================
             CART
-        ========}
+        ================================================= */}
 
         <div className="navbar-cart-icon">
 
@@ -167,9 +167,9 @@ const Navbar = ({ setShowLogin, showLogin }) => {
         </div>
 
 
-        {========
+        {/* =================================================
             AUTH
-        ========}
+        ================================================= */}
 
         {!token ? (
 
