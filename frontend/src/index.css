@@ -12,6 +12,22 @@
   
 }
 
+/* Headings */
+h1,
+h2,
+h3 {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Paragraphs */
+p {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+/* Decorative text */
+.brand-script {
+  font-family: "Cedarville Cursive", cursive;
+}
 
 body{
   min-height: 100vh;
