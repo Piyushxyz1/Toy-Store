@@ -273,8 +273,8 @@ const Welcome = ({ setShowLogin }) => {
 
       {/* FINAL CTA */}
       <section className="welcome-final-cta">
-        {/* <div className="cta-orb cta-orb-one" />
-        <div className="cta-orb cta-orb-two" /> */}
+        <div className="cta-orb cta-orb-one" />
+        <div className="cta-orb cta-orb-two" />
 
         <div className="cta-inner">
           <span className="section-eyebrow">YOUR NEXT ADVENTURE AWAITS</span>
