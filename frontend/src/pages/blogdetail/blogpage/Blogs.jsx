@@ -8,25 +8,25 @@ const Blogs = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [search, setSearch] = useState("");
 
-  /* =========================================================
+  
      CATEGORIES
-  ========================================================= */
+  
 
   const categories = [
     "All",
     ...new Set(posts.map((post) => post.category)),
   ];
 
-  /* =========================================================
-     FEATURED POST
-  ========================================================= */
+  
+
+  
 
   const featuredPost =
     posts.find((post) => post.featured) || posts[0];
 
-  /* =========================================================
-     FILTER POSTS
-  ========================================================= */
+  
+    
+  
 
   const filteredPosts = useMemo(() => {
     return posts.filter((post) => {
@@ -45,9 +45,9 @@ const Blogs = () => {
     });
   }, [activeCategory, search]);
 
-  /* =========================================================
-     REMOVE FEATURED FROM GRID
-  ========================================================= */
+  
+
+  
 
   const normalPosts = filteredPosts.filter(
     (post) => post.id !== featuredPost?.id
@@ -56,9 +56,9 @@ const Blogs = () => {
   return (
     <main className="blogs-page">
 
-      {/* =====================================================
-          HERO
-      ===================================================== */}
+   
+       
+   
 
       <section className="blogs-hero">
 
@@ -107,9 +107,9 @@ const Blogs = () => {
       </section>
 
 
-      {/* =====================================================
+   
           FEATURED ARTICLE
-      ===================================================== */}
+   
 
       {featuredPost && (
         <section className="featured-section">
@@ -221,9 +221,8 @@ const Blogs = () => {
       )}
 
 
-      {/* =====================================================
-          ALL STORIES
-      ===================================================== */}
+   
+ 
 
       <section
         className="all-blogs-section"
@@ -254,9 +253,7 @@ const Blogs = () => {
           </div>
 
 
-          {/* =================================================
-              FILTER + SEARCH
-          ================================================= */}
+       
 
           <div className="blogs-controls">
 
@@ -301,9 +298,6 @@ const Blogs = () => {
           </div>
 
 
-          {/* =================================================
-              BLOG GRID
-          ================================================= */}
 
           {normalPosts.length > 0 ? (
 
@@ -424,9 +418,9 @@ const Blogs = () => {
       </section>
 
 
-      {/* =====================================================
+   
           NEWSLETTER / CTA
-      ===================================================== */}
+   
 
       <section className="blogs-cta">
 

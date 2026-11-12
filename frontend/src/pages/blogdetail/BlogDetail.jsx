@@ -22,9 +22,9 @@ const BlogDetail = () => {
 
   const post = posts.find((item) => item.id === Number(id));
 
-  /* =========================================================
+  
      READING PROGRESS
-  ========================================================= */
+  
 
   useEffect(() => {
     const updateProgress = () => {
@@ -51,9 +51,9 @@ const BlogDetail = () => {
     };
   }, []);
 
-  /* =========================================================
+  
      ARTICLE SECTIONS
-  ========================================================= */
+  
 
   const sections = useMemo(() => {
     if (!post?.fullContent) return [];
@@ -68,9 +68,9 @@ const BlogDetail = () => {
     }));
   }, [post]);
 
-  /* =========================================================
+  
      ADD IDS TO H2 HEADINGS
-  ========================================================= */
+  
 
   const formattedContent = useMemo(() => {
     if (!post?.fullContent) return "";
@@ -87,9 +87,9 @@ const BlogDetail = () => {
     );
   }, [post]);
 
-  /* =========================================================
+  
      RELATED POSTS
-  ========================================================= */
+  
 
   const relatedPosts = useMemo(() => {
     if (!post) return [];
@@ -107,9 +107,9 @@ const BlogDetail = () => {
     return [...sameCategory, ...otherPosts].slice(0, 3);
   }, [post]);
 
-  /* =========================================================
+  
      SHARE
-  ========================================================= */
+  
 
   const handleShare = async () => {
     const shareData = {
@@ -130,9 +130,9 @@ const BlogDetail = () => {
     }
   };
 
-  /* =========================================================
+  
      COPY LINK
-  ========================================================= */
+  
 
   const handleCopyLink = async () => {
     try {
@@ -143,9 +143,9 @@ const BlogDetail = () => {
     }
   };
 
-  /* =========================================================
+  
      INVALID POST
-  ========================================================= */
+  
 
   if (!post) {
     return <Navigate to="/" replace />;
@@ -156,17 +156,17 @@ const BlogDetail = () => {
   return (
     <main className="blog-detail-page">
 
-      {/* =====================================================
+   
           READING PROGRESS
-      ===================================================== */}
+   
 
       <div className="reading-progress">
         <span style={{ width: `${progress}%` }} />
       </div>
 
-      {/* =====================================================
+   
           TOP BAR
-      ===================================================== */}
+   
 
       <header className="article-topbar">
 
@@ -199,9 +199,9 @@ const BlogDetail = () => {
 
       </header>
 
-      {/* =====================================================
+   
           HERO
-      ===================================================== */}
+   
 
       <section className="article-hero">
 
@@ -333,17 +333,17 @@ const BlogDetail = () => {
 
       </section>
 
-      {/* =====================================================
+   
           ARTICLE AREA
-      ===================================================== */}
+   
 
       <section className="article-main">
 
         <div className="article-main-grid">
 
-          {/* =================================================
+          {========
               LEFT SHARE RAIL
-          ================================================= */}
+          ========}
 
           <aside className="article-share-rail">
 
@@ -369,9 +369,9 @@ const BlogDetail = () => {
 
           </aside>
 
-          {/* =================================================
+          {========
               ARTICLE CONTENT
-          ================================================= */}
+          ========}
 
           <article className="article-content">
 
@@ -382,9 +382,9 @@ const BlogDetail = () => {
               }}
             />
 
-            {/* =================================================
+            {========
                 AUTHOR CARD
-            ================================================= */}
+            ========}
 
             <div className="article-author-card">
 
@@ -425,9 +425,9 @@ const BlogDetail = () => {
 
           </article>
 
-          {/* =================================================
+          {========
               RIGHT SIDEBAR
-          ================================================= */}
+          ========}
 
           <aside className="article-sidebar">
 
@@ -498,9 +498,9 @@ const BlogDetail = () => {
 
       </section>
 
-      {/* =====================================================
+   
           RELATED STORIES
-      ===================================================== */}
+   
 
       {relatedPosts.length > 0 && (
         <section className="related-section">
@@ -581,9 +581,9 @@ const BlogDetail = () => {
         </section>
       )}
 
-      {/* =====================================================
+   
           FOOTER CTA
-      ===================================================== */}
+   
 
       <section className="article-end-section">
 

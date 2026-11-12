@@ -27,7 +27,7 @@ const App = () => {
 
   return (
     <>
-      {/* ================= LOGIN MODAL ================= */}
+      {/* = LOGIN MODAL = */}
 
       {showLogin ? (
         <Login showLogin={showLogin} setShowLogin={setShowLogin} />
@@ -47,33 +47,33 @@ const App = () => {
           limit={1}
         />
 
-        {/* ================= NAVBAR ================= */}
+        {/* = NAVBAR = */}
 
         <Navbar showLogin={showLogin} setShowLogin={setShowLogin} />
 
         <div style={{ width: "80%", margin: "auto" }}>
           <Routes>
-            {/* ================= WELCOME ================= */}
+            {/* = WELCOME = */}
 
             <Route
               path="/welcome"
               element={<Welcome setShowLogin={setShowLogin} />}
             />
 
-            {/* ================= HOME ================= */}
+            {/* = HOME = */}
 
             <Route
               path="/"
               element={token ? <Home /> : <Navigate to="/welcome" replace />}
             />
 
-            {/* ================= EXISTING ROUTES ================= */}
+            {/* = EXISTING ROUTES = */}
 
             <Route path="/blogs" element={<Blogs />} />
 
             <Route path="/blogs/:id" element={<BlogDetail />} />
 
-            {/* ================= PROTECTED ROUTES ================= */}
+            {/* = PROTECTED ROUTES = */}
 
             <Route element={<ProtectedRoute />}>
               <Route path="/menu" element={<ToyMenu />} />
