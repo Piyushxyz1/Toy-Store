@@ -1,697 +1,663 @@
 
-   HEADER / HERO BANNER
-   
+/* =========================================
+   TOYVERSE — PREMIUM HERO
+========================================= */
 
 .header {
-  width: calc(100% - 32px);
-  min-height: 520px;
-  height: clamp(420px, 40vw, 650px);
+  --hero-coral: #f2654b;
+  --hero-ink: #202c35;
+  --hero-paper: #faf9f6;
 
   position: relative;
-  margin: 30px auto;
+  isolation: isolate;
 
-  border-radius: 24px;
+  width: calc(100% - 64px);
+  max-width: 1500px;
+
+  min-height: 590px;
+  height: clamp(590px, 48vw, 720px);
+
+  margin: 28px auto 55px;
+
+  display: flex;
+  align-items: center;
+
   overflow: hidden;
+  border-radius: 24px;
 
-  background:
-    linear-gradient(
-      to bottom,
-      transparent 15%,
-      rgba(0, 0, 0, 0.88) 100%
-    ),
-    url("/toys-store-banner.avif");
-
+  background-color: #24282b;
+  background-image: url("/toys-store-banner.avif");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 
-  box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 22px 65px rgba(32, 44, 53, 0.13);
 
-  transition: all 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-
-  opacity: 0;
-  transform: scale(0.95) rotate(1deg);
+  animation: heroReveal 0.8s ease both;
 }
 
-.header-visible {
-  opacity: 1;
-  transform: scale(1) rotate(0deg);
+/* =========================================
+   BACKGROUND OVERLAY
+========================================= */
+
+.header__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(23, 30, 34, 0.92) 0%,
+      rgba(23, 30, 34, 0.82) 35%,
+      rgba(23, 30, 34, 0.36) 67%,
+      rgba(23, 30, 34, 0.08) 100%
+    );
 }
 
+.header__glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
 
+  background:
+    radial-gradient(
+      circle at 12% 85%,
+      rgba(242, 101, 75, 0.18),
+      transparent 40%
+    );
 
-   HEADER CONTENT
-   
+  pointer-events: none;
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
 
 .header-contents {
-  position: absolute;
-
-  left: clamp(24px, 6vw, 90px);
-  right: clamp(24px, 6vw, 90px);
-  bottom: clamp(35px, 6vw, 75px);
-
+  position: relative;
   z-index: 2;
 
-  width: min(700px, calc(100% - 48px));
-  max-width: 700px;
+  width: min(610px, 54%);
+  margin-left: clamp(40px, 7.5vw, 110px);
 
-  animation: fadeInUp 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  padding: 55px 0;
+
+  color: #ffffff;
 }
 
-
-
-   BADGE
-   
-
-.header-badge-wrapper {
-  margin-bottom: clamp(14px, 2vw, 24px);
-  animation: fadeInDown 1s ease;
-}
+/* =========================================
+   COLLECTION BADGE
+========================================= */
 
 .header-badge {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 9px;
 
-  padding: 8px 20px 8px 16px;
+  padding: 9px 15px;
 
+  width: fit-content;
   max-width: 100%;
 
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.24);
   border-radius: 50px;
 
-  font-size: clamp(10px, 1vw, 13px);
-  font-weight: 500;
+  background: rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
-  color: rgba(255, 255, 255, 0.9);
-  letter-spacing: 0.3px;
+  color: rgba(255, 255, 255, 0.94);
 
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+
+  margin-bottom: 28px;
 }
 
 .header-badge svg {
+  color: #ffad91;
   flex-shrink: 0;
-  stroke: #FF6B6B;
-  animation: rotateStar 4s linear infinite;
 }
 
-
-
-   HEADING
-   
+/* =========================================
+   MAIN HEADING
+========================================= */
 
 .header-contents h1 {
-  margin: 0 0 clamp(12px, 2vw, 20px);
-  max-width: 100%;
+  margin: 0 0 22px;
 
-  text-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
-
-  overflow-wrap: break-word;
-  word-break: normal;
-}
-
-.text-line {
-  display: block;
-
-  /*
-    clamp prevents the heading from becoming too large
-    on desktop and too small on mobile
-  */
-  font-size: clamp(26px, 4.5vw, 64px);
-
-  font-weight: 600;
   color: #ffffff;
 
-  letter-spacing: clamp(-1.5px, -0.1vw, -0.5px);
-  line-height: 1.08;
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(48px, 6.1vw, 82px);
+  font-weight: 700;
 
-  max-width: 100%;
+  line-height: 0.99;
+  letter-spacing: -3.8px;
 
-  overflow-wrap: break-word;
+  text-wrap: balance;
 }
 
-.text-line-1 {
-  animation: slideInLeft 0.8s ease;
+.gradient-text {
+  display: inline-block;
+
+  color: var(--hero-coral);
+
+  background: linear-gradient(
+    100deg,
+    #ff9a7f 0%,
+    #f2654b 55%,
+    #e95647 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.text-line-2 {
-  animation: slideInRight 0.8s ease 0.1s both;
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.header-description {
+  max-width: 475px;
+
+  margin: 0 0 30px;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+
+  line-height: 1.85;
+  letter-spacing: 0.1px;
 }
 
-
-
-   PARAGRAPH
-   
-
-.header-contents p {
-  width: 100%;
-  max-width: 620px;
-
-  margin: 0 0 clamp(18px, 2.5vw, 32px);
-
-  font-size: clamp(13px, 1.4vw, 18px);
-  line-height: 1.6;
-
-  color: rgba(255, 255, 255, 0.9);
-
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-
-  font-weight: 300;
-  letter-spacing: 0.3px;
-
-  overflow-wrap: break-word;
-
-  animation: fadeIn 1s ease 0.3s both;
-}
-
-
-
-   ACTIONS
-   
+/* =========================================
+   CTA
+========================================= */
 
 .header-actions {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  gap: 20px;
 
-  gap: clamp(12px, 2vw, 30px);
-
-  width: 100%;
-
-  animation: fadeIn 1s ease 0.5s both;
+  margin-bottom: 42px;
 }
 
+.header-cta {
+  min-height: 54px;
 
-
-   CTA
-   
-
-.cta-button {
-  position: relative;
-
-  padding: 0;
-
-  border: none;
-  background: none;
-
-  cursor: pointer;
-
-  overflow: hidden;
-
-  border-radius: 60px;
-
-  box-shadow:
-    0 8px 40px rgba(255, 107, 107, 0.3);
-
-  max-width: 100%;
-}
-
-.btn-content {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 13px;
 
-  gap: 12px;
+  padding: 0 25px;
 
-  padding: clamp(11px, 1.2vw, 16px)
-           clamp(20px, 3vw, 38px);
+  border: 1px solid var(--hero-coral);
+  border-radius: 8px;
 
-  background: linear-gradient(
-    135deg,
-    #FF6B6B,
-    #ff5252,
-    #e84848
-  );
-
+  background: var(--hero-coral);
   color: #ffffff;
 
-  font-size: clamp(13px, 1.2vw, 16px);
-  font-weight: 700;
+  font-family: "Outfit", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
 
-  letter-spacing: 0.5px;
+  text-decoration: none;
 
-  border-radius: 60px;
+  box-shadow: 0 9px 25px rgba(242, 101, 75, 0.22);
 
-  transition: all 0.4s
-    cubic-bezier(0.34, 1.56, 0.64, 1);
-
-  position: relative;
-  z-index: 2;
-
-  white-space: nowrap;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.btn-content svg {
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
+.header-cta svg {
+  transition: transform 0.25s ease;
 }
 
+.header-cta:hover {
+  background: #df563f;
+  border-color: #df563f;
 
+  transform: translateY(-3px);
 
+  box-shadow: 0 13px 30px rgba(242, 101, 75, 0.3);
+}
+
+.header-cta:hover svg {
+  transform: translateX(4px);
+}
+
+.header-cta:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+.header-note {
+  color: rgba(255, 255, 255, 0.7);
+
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* =========================================
    STATS
-   
+========================================= */
 
 .header-stats {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 25px;
 
-  gap: clamp(10px, 1.5vw, 20px);
-
-  padding: 10px clamp(14px, 2vw, 22px);
-
-  background: rgba(255, 255, 255, 0.06);
-
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-
-  border-radius: 60px;
-
-  border: 1px solid rgba(255, 255, 255, 0.06);
-
+  width: fit-content;
   max-width: 100%;
+
+  padding-top: 23px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .stat-item {
   display: flex;
   flex-direction: column;
-  align-items: center;
-
-  gap: 2px;
-
-  min-width: 45px;
+  gap: 5px;
 }
 
 .stat-number {
-  font-size: clamp(13px, 1.4vw, 18px);
-  font-weight: 700;
-
   color: #ffffff;
 
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  font-family: "Outfit", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .stat-label {
-  font-size: clamp(8px, 0.85vw, 11px);
+  color: rgba(255, 255, 255, 0.62);
 
-  font-weight: 400;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
 
-  color: rgba(255, 255, 255, 0.6);
-
-  letter-spacing: 0.3px;
-
+  letter-spacing: 0.5px;
   text-transform: uppercase;
-
   white-space: nowrap;
 }
 
 .stat-divider {
   width: 1px;
-  height: 30px;
+  height: 34px;
 
-  background: rgba(255, 255, 255, 0.08);
-
-  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.2);
 }
 
+/* =========================================
+   SIDE LABEL
+========================================= */
 
+.header-side-label {
+  position: absolute;
+  z-index: 2;
 
-   TABLET
-   
+  right: 25px;
+  top: 50%;
 
-@media (max-width: 900px) {
+  writing-mode: vertical-rl;
+  transform: translateY(-50%);
 
+  color: rgba(255, 255, 255, 0.7);
+
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+/* =========================================
+   DECORATIVE ACCENT
+========================================= */
+
+.header-decoration {
+  position: absolute;
+  z-index: 1;
+
+  top: 65px;
+  right: 12%;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 38px;
+
+  animation: decorationFloat 5s ease-in-out infinite;
+}
+
+/* =========================================
+   SCROLL INDICATOR
+========================================= */
+
+.header-scroll {
+  position: absolute;
+  z-index: 2;
+
+  right: 42px;
+  bottom: 35px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 1.7px;
+}
+
+.scroll-line {
+  display: block;
+
+  width: 38px;
+  height: 1px;
+
+  background: var(--hero-coral);
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes decorationFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(12deg);
+  }
+}
+
+/* =========================================
+   LARGE TABLETS
+========================================= */
+
+@media (max-width: 1100px) {
   .header {
-    width: calc(100% - 32px);
-    min-height: 460px;
-    height: 500px;
-
-    margin: 20px auto;
-
-    border-radius: 18px;
+    width: calc(100% - 48px);
+    height: 620px;
+    min-height: 620px;
   }
 
   .header-contents {
-    left: 5%;
-    right: 5%;
-    bottom: 7%;
-
-    width: 90%;
-    max-width: 620px;
+    width: 58%;
+    margin-left: 55px;
   }
 
-  .text-line {
-    font-size: clamp(28px, 5vw, 48px);
+  .header-contents h1 {
+    font-size: clamp(48px, 6.5vw, 68px);
+    letter-spacing: -2.8px;
   }
 
-  .header-contents p {
+  .header-description {
+    max-width: 410px;
+    font-size: 15px;
+  }
+
+  .header-stats {
+    gap: 19px;
+  }
+}
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 768px) {
+  .header {
+    width: calc(100% - 32px);
+
+    height: 620px;
+    min-height: 620px;
+
+    margin: 20px auto 40px;
+
+    border-radius: 18px;
+
+    background-position: 62% center;
+  }
+
+  .header__overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(23, 30, 34, 0.91) 0%,
+        rgba(23, 30, 34, 0.79) 55%,
+        rgba(23, 30, 34, 0.38) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(23, 30, 34, 0.45),
+        transparent 55%
+      );
+  }
+
+  .header-contents {
+    width: min(540px, calc(100% - 70px));
+    margin-left: 38px;
+    padding: 40px 0;
+  }
+
+  .header-contents h1 {
+    font-size: clamp(48px, 8vw, 64px);
+    letter-spacing: -2.5px;
+  }
+
+  .header-description {
+    max-width: 430px;
     font-size: 14px;
-    max-width: 560px;
   }
 
-  .header-actions {
-    gap: 14px;
+  .header-side-label {
+    display: none;
+  }
+
+  .header-decoration {
+    right: 35px;
+    top: 35px;
+    font-size: 30px;
   }
 
   .header-scroll {
-    display: none;
-  }
-
-  .header-lines {
-    display: none;
-  }
-
-  .header-circles .circle {
-    display: none;
-  }
-
-  .corner {
-    display: none;
+    right: 28px;
+    bottom: 25px;
   }
 }
 
-
-
+/* =========================================
    MOBILE
-   
+========================================= */
 
-@media (max-width: 750px) {
-
+@media (max-width: 520px) {
   .header {
     width: calc(100% - 24px);
 
-    /*
-      IMPORTANT:
-      Don't use 50vw here.
-      It makes the banner too short for its content.
-    */
-    height: 540px;
-    min-height: 540px;
+    height: 610px;
+    min-height: 610px;
 
-    margin: 16px 12px;
+    margin: 14px auto 32px;
 
-    border-radius: 16px;
+    border-radius: 15px;
 
-    background-position: center;
+    background-position: 63% center;
+  }
+
+  .header__overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(23, 30, 34, 0.91) 0%,
+        rgba(23, 30, 34, 0.79) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(23, 30, 34, 0.55),
+        transparent 70%
+      );
   }
 
   .header-contents {
-    position: absolute;
+    width: calc(100% - 40px);
+    margin-left: 20px;
 
-    left: 20px;
-    right: 20px;
-    bottom: 28px;
-
-    width: auto;
-    max-width: none;
-  }
-
-  .header-badge-wrapper {
-    margin-bottom: 14px;
+    padding: 32px 0;
   }
 
   .header-badge {
-    max-width: 100%;
-
-    padding: 6px 12px 6px 10px;
+    padding: 8px 12px;
+    margin-bottom: 23px;
 
     font-size: 10px;
-
-    white-space: nowrap;
+    letter-spacing: 0.5px;
   }
 
-  .text-line {
-    font-size: clamp(25px, 8vw, 38px);
+  .header-contents h1 {
+    margin-bottom: 17px;
 
-    line-height: 1.08;
-
-    letter-spacing: -0.7px;
+    font-size: clamp(43px, 11vw, 57px);
+    letter-spacing: -2px;
+    line-height: 1.02;
   }
 
-  .header-contents p {
-    max-width: 100%;
+  .header-description {
+    max-width: 360px;
+
+    margin-bottom: 23px;
 
     font-size: 13px;
-
-    line-height: 1.5;
-
-    margin-bottom: 18px;
+    line-height: 1.75;
   }
 
   .header-actions {
-    display: flex;
+    align-items: flex-start;
+    gap: 13px;
 
-    flex-direction: column;
-
-    align-items: stretch;
-
-    gap: 12px;
-
-    width: 100%;
+    margin-bottom: 32px;
   }
 
-  .cta-button {
-    width: 100%;
-  }
-
-  .btn-content {
-    width: 100%;
-    box-sizing: border-box;
-
-    padding: 12px 20px;
+  .header-cta {
+    min-height: 49px;
+    padding: 0 19px;
 
     font-size: 13px;
+  }
+
+  .header-note {
+    font-size: 11px;
   }
 
   .header-stats {
     width: 100%;
-    box-sizing: border-box;
+    gap: 12px;
 
-    padding: 8px 10px;
-
-    gap: 8px;
-
-    justify-content: space-around;
+    padding-top: 18px;
   }
 
   .stat-number {
-    font-size: 13px;
+    font-size: 18px;
   }
 
   .stat-label {
     font-size: 8px;
+    letter-spacing: 0.3px;
   }
 
   .stat-divider {
-    height: 20px;
+    height: 29px;
   }
 
-  .header-scroll,
-  .header-particles,
-  .header-lines,
-  .header-circles,
-  .corner {
+  .header-decoration {
     display: none;
-  }
-}
-
-
-
-   SMALL PHONES
-   
-
-@media (max-width: 480px) {
-
-  .header {
-    width: calc(100% - 16px);
-
-    height: 560px;
-    min-height: 560px;
-
-    margin: 12px 8px;
-
-    border-radius: 14px;
-
-    /*
-      Slightly reposition image so important
-      part doesn't get hidden behind text.
-    */
-    background-position: center center;
-  }
-
-  .header-contents {
-    left: 16px;
-    right: 16px;
-    bottom: 22px;
-
-    width: auto;
-  }
-
-  .header-badge {
-    font-size: 9px;
-
-    padding: 5px 10px 5px 8px;
-
-    gap: 7px;
-  }
-
-  .header-badge svg {
-    width: 12px;
-    height: 12px;
-  }
-
-  .header-contents h1 {
-    margin-bottom: 12px;
-  }
-
-  .text-line {
-    font-size: clamp(24px, 8vw, 32px);
-
-    line-height: 1.08;
-
-    letter-spacing: -0.5px;
-  }
-
-  .header-contents p {
-    font-size: 12px;
-
-    line-height: 1.5;
-
-    margin-bottom: 16px;
-  }
-
-  .btn-content {
-    padding: 11px 16px;
-
-    font-size: 12px;
-
-    gap: 7px;
-  }
-
-  .btn-content svg {
-    width: 15px;
-    height: 15px;
-  }
-
-  .header-stats {
-    padding: 7px 8px;
-
-    gap: 5px;
-  }
-
-  .stat-number {
-    font-size: 11px;
-  }
-
-  .stat-label {
-    font-size: 7px;
-  }
-
-  .stat-divider {
-    height: 17px;
-  }
-
-  .gradient-text::after {
-    height: 2px;
-  }
-}
-
-
-
-   VERY SMALL PHONES
-   
-
-@media (max-width: 360px) {
-
-  .header {
-    height: 580px;
-    min-height: 580px;
-  }
-
-  .header-contents {
-    left: 14px;
-    right: 14px;
-    bottom: 18px;
-  }
-
-  .text-line {
-    font-size: 23px;
-  }
-
-  .header-contents p {
-    font-size: 11px;
-  }
-
-  .btn-content {
-    font-size: 11px;
-    padding: 10px 14px;
-  }
-
-  .header-stats {
-    gap: 3px;
-    padding: 6px;
-  }
-
-  .stat-number {
-    font-size: 10px;
-  }
-
-  .stat-label {
-    font-size: 6.5px;
-  }
-}
-
-
-
-   LANDSCAPE MOBILE
-   
-
-@media (max-height: 600px) and (orientation: landscape) {
-
-  .header {
-    height: 90vh;
-    min-height: 420px;
-
-    margin: 12px auto;
-  }
-
-  .header-contents {
-    bottom: 25px;
-  }
-
-  .text-line {
-    font-size: clamp(22px, 4vw, 36px);
-  }
-
-  .header-contents p {
-    font-size: 12px;
-    margin-bottom: 12px;
-  }
-
-  .btn-content {
-    padding: 9px 18px;
-    font-size: 11px;
-  }
-
-  .header-stats {
-    padding: 5px 10px;
-  }
-
-  .stat-number {
-    font-size: 11px;
-  }
-
-  .stat-label {
-    font-size: 7px;
   }
 
   .header-scroll {
     display: none;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .header {
+    height: 590px;
+    min-height: 590px;
+  }
+
+  .header-contents {
+    width: calc(100% - 32px);
+    margin-left: 16px;
+  }
+
+  .header-contents h1 {
+    font-size: 42px;
+    letter-spacing: -1.8px;
+  }
+
+  .header-description {
+    font-size: 12px;
+  }
+
+  .header-stats {
+    gap: 8px;
+  }
+
+  .stat-number {
+    font-size: 16px;
+  }
+
+  .stat-label {
+    font-size: 7px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .header-decoration,
+  .header-cta,
+  .header-cta svg {
+    animation: none !important;
+    transition: none !important;
   }
 }
