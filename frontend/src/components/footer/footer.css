@@ -85,7 +85,7 @@
   align-items: center;
   justify-content: center;
 
-  background: #ffffff;
+  background: #f2654b;
   border: 1px solid var(--footer-border);
   border-radius: 50%;
 
@@ -103,11 +103,11 @@
   transition: filter var(--footer-transition);
 }
 
-.footer__social-link:hover {
+/* .footer__social-link:hover {
   background: var(--footer-accent);
   border-color: var(--footer-accent);
   transform: translateY(-3px);
-}
+} */
 
 .footer__social-link:hover img {
   filter: brightness(0) invert(1);
