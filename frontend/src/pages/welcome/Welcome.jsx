@@ -25,7 +25,7 @@ const categories = [
     title: "Games & Puzzles",
     description: "A little challenge. A lot of fun.",
     image:
-      "https://images.unsplash.com/photo-1606503153255-59d8b8b8219b?auto=format&fit=crop&w=900&q=85",
+      "https://images.openai.com/static-rsc-4/Z3GPcmBLapCZFqt9cc7Md2jYToYZ1yVziqaWF4xy9k9EYKOu9F_quTPVUDK7DEFsp7Ad1nOfXz7NF8wVLlM-6nWISnco5O0DVSiGqKVvclkjv7Nh8ldmCjs9ExmWgtSzezyHefIKaS11NLhfaKF7caCAw7xZVS2yt-Lyi44bswAdW94_FMoaZopF5NbKr-Bg?purpose=fullsize",
     className: "",
   },
 ];
