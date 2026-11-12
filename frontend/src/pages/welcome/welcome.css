@@ -12,7 +12,7 @@
 
 .welcome-page {
   overflow: hidden;
-  background: var(--toy-bg);
+  /* background: var(--toy-bg); */
   color: var(--toy-dark);
   font-family: "DM Sans", sans-serif;
 }
