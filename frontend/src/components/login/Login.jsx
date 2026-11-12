@@ -1,11 +1,12 @@
-import  { useState, useContext } from "react";
-import { assets } from "../../assets/assets";
-import "./login.css";
-import { StoreContext } from "../../context/StoreContext";
+
+import React, { useState, useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+
+import { assets } from "../../assets/assets";
+import { StoreContext } from "../../context/StoreContext";
+import "./login.css";
 
 const Login = ({ setShowLogin }) => {
   const [currState, setCurrState] = useState("Login");
@@ -29,7 +30,6 @@ const Login = ({ setShowLogin }) => {
 
   const onLogin = async (e) => {
     e.preventDefault();
-
     setLoading(true);
 
     try {
@@ -69,11 +69,11 @@ const Login = ({ setShowLogin }) => {
       }
     } catch (error) {
       toast.error(
-        error.response?.data?.message || "Something went wrong. Please try again."
+        error.response?.data?.message ||
+          "Something went wrong. Please try again."
       );
     } finally {
       setLoading(false);
-      
     }
   };
 
@@ -85,93 +85,139 @@ const Login = ({ setShowLogin }) => {
     };
   }, []);
 
-
-
   return (
     <div className="login-popup">
       <form className="login-popup-container" onSubmit={onLogin}>
-        <div className="login-popup-title">
-          <h2>
-            {currState === "Login" 
-              ? "Sign in to continue!" 
-              : "Join the Fun!"}
-          </h2>
-          <img
-            src={assets.cross_icon}
-            alt="Close"
-            onClick={() => setShowLogin(false)}
-          />
+        <button
+          type="button"
+          className="login-close"
+          onClick={() => setShowLogin(false)}
+          aria-label="Close login popup"
+        >
+          <img src={assets.cross_icon} alt="" />
+        </button>
+
+        <div className="login-brand">
+          <span className="login-brand-mark">T</span>
+          <span className="login-brand-name">
+            TOY<span>VERSE</span>
+          </span>
         </div>
 
-        {currState === "Login" ? (
+        <div className="login-popup-title">
+          <span className="login-eyebrow">
+            {currState === "Login"
+              ? "WELCOME BACK"
+              : "YOUR NEXT ADVENTURE STARTS HERE"}
+          </span>
+
+          <h2>
+            {currState === "Login"
+              ? "Sign in to continue."
+              : "Join the fun."}
+          </h2>
+
           <p className="login-subtitle">
-            Ready to play? Sign in and continue your adventure!
+            {currState === "Login"
+              ? "Ready to play? Sign in and pick up where your adventure left off."
+              : "Create your account and discover a world of toys, games and imagination."}
           </p>
-        ) : (
-          <p className="login-subtitle">
-            Create your account and start exploring amazing toys and games!
-          </p>
-        )}
+        </div>
 
         <div className="login-popup-inputs">
           {currState === "SignUp" && (
+            <div className="login-field">
+              <label htmlFor="login-name">Your name</label>
+              <input
+                id="login-name"
+                type="text"
+                placeholder="Enter your name"
+                name="Name"
+                value={data.Name}
+                onChange={onChangeHandler}
+                required
+              />
+            </div>
+          )}
+
+          <div className="login-field">
+            <label htmlFor="login-email">Email address</label>
             <input
-              type="text"
-              placeholder="Your Name"
-              name="Name"
-              value={data.Name}
+              id="login-email"
+              type="email"
+              placeholder="you@example.com"
+              name="Email"
+              value={data.Email}
               onChange={onChangeHandler}
               required
             />
-          )}
+          </div>
 
-          <input
-            type="email"
-            placeholder="Email Address"
-            name="Email"
-            value={data.Email}
-            onChange={onChangeHandler}
-            required
-          />
-
-          <input
-            type="password"
-            placeholder="Password"
-            name="Password"
-            value={data.Password}
-            onChange={onChangeHandler}
-            required
-          />
+          <div className="login-field">
+            <label htmlFor="login-password">Password</label>
+            <input
+              id="login-password"
+              type="password"
+              placeholder="Enter your password"
+              name="Password"
+              value={data.Password}
+              onChange={onChangeHandler}
+              required
+            />
+          </div>
         </div>
 
-        <button type="submit" disabled={loading}>
-          {loading
-            ? "Please wait..."
-            : currState === "SignUp"
-            ? "Create Account"
-            : "Login"}
+        <button
+          className="login-submit"
+          type="submit"
+          disabled={loading}
+        >
+          <span>
+            {loading
+              ? "Please wait..."
+              : currState === "SignUp"
+              ? "Create your account"
+              : "Sign in to your account"}
+          </span>
+          {!loading && <span className="login-submit-arrow">↗</span>}
         </button>
 
         <div className="login-popup-condition">
-          <input type="checkbox" required />
-          <p>
+          <input type="checkbox" id="login-terms" required />
+          <label htmlFor="login-terms">
             I agree to the{" "}
             <span className="link-text">Terms of Use</span> and{" "}
             <span className="link-text">Privacy Policy</span>
-          </p>
+          </label>
         </div>
 
-        {currState === "Login" ? (
-          <p className="switch-text">
-            New here?{" "}
-            <span onClick={() => setCurrState("SignUp")}>Sign up now</span>
-          </p>
-        ) : (
-          <p className="switch-text">
-            Already a member?{" "}
-            <span onClick={() => setCurrState("Login")}>Sign in</span>
-          </p>
-        )}
+        <div className="login-switch">
+          {currState === "Login" ? (
+            <p>
+              New to ToyVerse?
+              <button
+                type="button"
+                onClick={() => setCurrState("SignUp")}
+              >
+                Create an account
+              </button>
+            </p>
+          ) : (
+            <p>
+              Already have an account?
+              <button
+                type="button"
+                onClick={() => setCurrState("Login")}
+              >
+                Sign in
+              </button>
+            </p>
+          )}
+        </div>
+
+        <div className="login-footer-note">
+          MADE FOR LITTLE MOMENTS & BIG IMAGINATIONS
+        </div>
       </form>
     </div>
   );
