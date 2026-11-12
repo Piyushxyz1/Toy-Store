@@ -41,7 +41,7 @@
 }
 
 
-   BRAND SECTION
+
 
 
 .footer__brand {
@@ -53,7 +53,7 @@
 
 .footer__tagline {
   margin: 0;
-  color: var(--footer-text);
+  color: var(--footer-bg);
   font-size: 22px;
   font-weight: 700;
   letter-spacing: 0.3px;
@@ -153,7 +153,7 @@
   width: 38px;
   height: 2px;
   border-radius: 4px;
-  background: var(--footer-text);
+  background: var(--footer-bg);
   transition: width var(--footer-transition);
 }
 
